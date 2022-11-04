@@ -1,0 +1,31 @@
+*{
+    margin:0 ;
+    padding: 0;
+
+}
+body{
+    background:black ;
+    color: orangered;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+}
+img{
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+}
+ul{
+    list-style: none;
+}
+a{
+    color: rgb(12, 209, 5);
+    display: block;
+    width: 200px;
+    padding: 20px;
+    margin: 20px auto;
+    border: 2px solid #fff
+}
+a:hover{
+    box-shadow: 0 0 20px rgb(7, 100, 4);
+    transform: scale(1.1);
+}
