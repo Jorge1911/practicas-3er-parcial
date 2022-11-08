@@ -43,8 +43,8 @@ tr.innerHTML=`
                 <th scope="row">${respuesta.id}</th>
                   <td>${respuesta.title}</td>
                   <td>${respuesta.body}</td>
-                  <td><button class="btn btn-primary btn-lg"><i class="bi bi-tiktok" data-bs-toggle="modal" data-bs-target="#editModal"></i> Editar </button> </td>
-                  <td> <button class="btn btn-danger btn-lg"><i class="bi bi-trash3-fill" data-bs-toggle="modal" data-bs-target="#deleteModal"></i> Eliminar </button></td>
+                  <td><button type="button" class="btn btn-secondary btn-lg " data-bs-toggle="modal" data-bs-target="#editModal"><i class="bi bi-brush-fill "></i>EDITAR</button></td>
+        <td><button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="bi bi-eraser-fill"></i>ELIMINAR</button></td>
                
 `
 tabla.appendChild(tr);
