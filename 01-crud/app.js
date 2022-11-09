@@ -52,7 +52,7 @@ if(respuesta!=null){
     Swal.fire({
         position: 'top-end',
         icon: 'EXITO ',
-        title: 'EDITADO exitoso',
+        title: 'EDITADO EXITOSO',
         showConfirmButton: false,
         timer: 1500
     })
@@ -67,6 +67,34 @@ if(respuesta!=null){
 }
 
 }
+const eliminarPost=(id)=>{
+    document.querySelector("#deleteid").value=id;
+}
+const deletePost=async ()=>{
+    const id=document.querySelector("#deleteid").value;
+    const api=await fetch('https://jsonplaceholder.typicode.com/posts/'+id, {
+        method: 'DELETE',
+    })
+    const respuesta=api.json();
+    console.log(respuesta)
+    if (respuesta != null) {
+        Swal.fire({
+            position: 'top-end',
+            icon: 'EXITO ',
+            title: 'ELIMINADO EXITOSO',
+            showConfirmButton: false,
+            timer: 1500
+        })
+    } else {
+        Swal.fire(
+            'Eres tonto?',
+            'That thing is still around?',
+            'question'
+            )
+
+    }
+}
+
 
 
 
@@ -105,10 +133,10 @@ if(respuesta!=null){
     Swal.fire({
         position: 'top-end',
         icon: 'EXITO ',
-        title: 'guardado exitoso',
+        title: 'GUARDADO EXITOSO',
         showConfirmButton: false,
         timer: 1500
-      })
+    })
 }else{
     Swal.fire(
         'Eres tonto?',
