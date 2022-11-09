@@ -121,17 +121,19 @@
           
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">TITLE</label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+              <input type="email" class="form-control" id="etitle" placeholder="name@example.com">
             </div>
             <div class="mb-3">
               <label for="exampleFormControlTextarea1" class="form-label">BODY</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              <textarea class="form-control" id="ebody" rows="3"></textarea>
             </div>
+            <input type="hidden" id="eid">
+            <input type="hidden" id="euserid">
     
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-primary" >Gaurdar</button>
+            <button type="button" class="btn btn-primary" onclick="guardarPost()" >Gaurdar</button>
           </div>
         </div>
       </div>
