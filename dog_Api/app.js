@@ -18,9 +18,9 @@ const changePerritos=async (raza)=>{
     let divPerritos=document.querySelector("#perritos");
     divPerritos.innerHTML="";
     data=response.message;
-   data.map(imgPerrito=>{
+    data.map(imgPerrito=>{
 
     divPerritos.innerHTML+=`
     <img src="${imgPerrito}">`
-   })
+})
 }

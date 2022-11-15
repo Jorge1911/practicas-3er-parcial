@@ -48,23 +48,23 @@ user:userid
 )
 const respuesta=api.json();
 console.log(respuesta)
-if(respuesta!=null){
-    Swal.fire({
-        position: 'top-end',
-        icon: 'EXITO ',
-        title: 'EDITADO EXITOSO',
-        showConfirmButton: false,
-        timer: 1500
-    })
-}else{
+Swal.fire({
+    title: ' QUIERES EDITAR?',
+    text: "ESTAS SEGURO DE EDITAR?",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'SI BORRAR'
+}).then((result) => {
+    if (result.isConfirmed) {
     Swal.fire(
-        'Eres tonto?',
-        'That thing is still around?',
-        'question'
-        )
-
-
-}
+        'EDITADO',
+        'TU POST A SIDO EDITADO.',
+        'success'
+    )
+    }
+})
 
 }
 const eliminarPost=(id)=>{
