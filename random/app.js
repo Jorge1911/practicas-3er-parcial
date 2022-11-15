@@ -12,7 +12,7 @@ const cargarRazas=async ()=>{
 
 const changePerritos=async (raza)=>{
     
-    const api=await fetch(`https://dog.ceo/api/breed/${raza}/images`);
+    const api=await fetch(`https://dog.ceo/api/breeds/${raza}/random`);
     const response=await api.json();
     console.log(response.message);
     let divPerritos=document.querySelector("#perritos");
