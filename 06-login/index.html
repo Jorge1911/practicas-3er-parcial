@@ -22,13 +22,13 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#iniciarModal" >iniciar sesion</a>
+                <a class="nav-link active" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#iniciarModal" id="iniciar">iniciar sesion</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#crearModal">crear cuenta</a>
+                <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#crearModal" id="crear">crear cuenta</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">cerrar sesion</a>
+                <a class="nav-link" href="#" id="cerrar">cerrar sesion</a>
               </li>
              
             </ul>
@@ -39,7 +39,7 @@
         <div class="card-header">
           bienvenido
         </div>
-        <div class="card-body">
+        <div class="card-body" id="container">
          <h1>mi primera vez con firebase</h1>
          <div class="card-footer  text-muded">
             design with love by karol
@@ -71,9 +71,11 @@
               </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-success" data-bs-dismiss="modal" ><i class="bi bi-box-arrow-right m-2"></i>iniciar</button>
+          <button type="button" class="btn btn-success" data-bs-dismiss="modal" id="btnIniciarSesion"><i class="bi bi-box-arrow-right m-2"></i>iniciar</button>
           <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="bi bi-x-circle-fill m-2"></i>cancelar</button>
-        </div>
+       
+            <button class="btn btn-primary" type="button" id="btnGoogle"><i class="bi bi-google"></i>gogle</button>
+          </div>
       </div>
     </div>
   </div>
@@ -89,18 +91,19 @@
             <form>
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Email address:</label>
-                  <input type="email" class="form-control" id="crearEmail" aria-describedby="emailHelp">
+                  <input type="email" class="form-control" id="crearEmail" autocomplete="off" required
+                  >
                 
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputPassword1" class="form-label">Password:</label>
-                  <input type="password" class="form-control" id="crearPassword">
+                  <input type="password" class="form-control" id="crearPassword" autocomplete="off" required>
                 </div>
                
               </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-success" data-bs-dismiss="modal" ><i class="bi bi-box-arrow-right m-2"></i>iniciar</button>
+          <button type="button" class="btn btn-success" data-bs-dismiss="modal"  id="btnCrearCuenta"><i class="bi bi-box-arrow-right m-2"></i>iniciar</button>
           <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="bi bi-x-circle-fill m-2"></i>cancelar</button>
         </div>
       </div>
