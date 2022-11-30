@@ -1,13 +1,11 @@
 import {app} from './firebase.js'
-import { getAuth, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithEmailAndPassword,onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
-const auth = getAuth(app);
-const provider = new GoogleAuthProvider();
+import { getAuth, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithEmailAndPassword, onAuthStateChanged, signInWithPopup } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js"
 
-const btnGoogle=document.querySelector("#btnGoogle");
-btnGoogle.addEventListener('click', async()=>{
+const auth=getAuth(app);
 
 
-});
+
+
 
 const btnIniciarSesion=document.querySelector("#btnIniciarSesion");
 btnIniciarSesion.addEventListener('click', async(e)=>{
@@ -96,3 +94,38 @@ btnCrearCuenta.addEventListener('click', async(e)=>{
   
   
    });
+
+   const btnGoogle=document.querySelector("#BtnCAG");
+btnGoogle.addEventListener('click', async(e)=>{
+e.preventDefault();
+  const provider = new GoogleAuthProvider();
+    try {
+        const credencial=await signInWithPopup(auth, provider)
+        user=credencial.user;
+        console.log(credencial)
+        Swal.fire({
+            icon: 'success',
+        title: 'Secces',
+        text: 'You logged in',
+    })
+    if (user){
+      container.innerHTML=`<h1>${user.email}</h1>`
+      document.querySelector("#iniciar").style.display="none";
+      document.querySelector("#crear").style.display="none";
+
+      const uid=user.uid;
+    
+    }else{
+
+      container.innerHTML=`<h1>no hay usuario</h1>`
+    }
+    } catch (error) {
+        console.log(error)
+        Swal.fire({
+            icon: 'error',
+           title: 'Ops...',
+            text: 'Don´t is possible login whit google in this moment',
+              })
+    }
+
+});
